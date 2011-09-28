@@ -30,8 +30,8 @@ public class BaseStation {
         this.handoverChannels = new ArrayList<Customer>();
         this.position = position * 1000;
         this.coverage = coverage * 1000;
-        this.coverageStart = position - coverage / 2;
-        this.coverageEnd = position + coverage / 2;
+        this.coverageStart = this.position - this.coverage / 2;
+        this.coverageEnd = this.position + this.coverage / 2;
         this.freeChannels = channels;
         this.freeHandoverChannels = handoverChannels;
         this.droppedCalls = 0;
@@ -45,7 +45,7 @@ public class BaseStation {
             channels.add(c);
             freeChannels--;
         } else {
-            result = new BlockCall(c);
+            result = new BlockCall(c, this);
         }
         return result;
     }
@@ -75,7 +75,7 @@ public class BaseStation {
             handoverChannels.add(c);
             freeHandoverChannels--;
         } else {
-            result = new DropCall(c);
+            result = new DropCall(c, this);
         }
         return result;
 
@@ -109,7 +109,7 @@ public class BaseStation {
         } else {
             arrivalTime += duration;
             c.setTime(arrivalTime);
-            result = new EndCall(c);
+            result = new EndCall(c, this);
         }
         return result;
     }
@@ -208,5 +208,10 @@ public class BaseStation {
 
     public void setCoverageStart(double coverageStart) {
         this.coverageStart = coverageStart;
+    }
+
+    @Override
+    public String toString() {
+        return "BaseStation{" + "id=" + id + ", freeChannels=" + freeChannels + ", freeHandoverChannels=" + freeHandoverChannels + '}';
     }
 }
