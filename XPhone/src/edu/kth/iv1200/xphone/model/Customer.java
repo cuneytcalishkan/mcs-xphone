@@ -64,4 +64,9 @@ public class Customer {
     public void setTime(double time) {
         this.time = time;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" + "id=" + id + ", time=" + time + ", position=" + position + ", duration=" + duration + ", speed=" + speed + '}';
+    }
 }
