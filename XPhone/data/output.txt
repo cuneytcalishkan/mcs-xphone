@@ -1,0 +1,20 @@
+
+Fri Sep 30 21:23:47 CEST 2011
+Seed = 1317410627643
+Length = 1000.0
+Replications = 10
+Warm-up = 100.0
+Channels = 10
+Reserved = 0
+Call duration mean = 200.23
+Speed mean = 100.099
+Speed stdev = 20.827
+Call interarrival mean = 2.0679
+Average total calls: 478 +- 18.8348 [459.1652 - 496.83.48]
+Variance of total calls: 694.5555555555555
+Average total dropped calls: 7 +- 2.4871 [4.5129 - 9.4871]
+Variance of dropped calls: 12.11111111111111
+Average total blocked calls: 2 +- 1.4877 [0.5123 - 3.4877]
+Variance of blocked calls: 4.333333333333333
+Average dropped calls percentage: %1,4727, QoS requirement (%2.5) SATISFIED
+Average blocked calls percentage: %0,5138, QoS requirement (%5.0) SATISFIED

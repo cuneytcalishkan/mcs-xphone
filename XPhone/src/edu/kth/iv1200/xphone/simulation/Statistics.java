@@ -14,20 +14,24 @@ public class Statistics {
     private int droppedCalls;
     private int blockedCalls;
     private int totalCalls;
+    private int handovers;
+    private int endCalls;
 
-    public Statistics(int replicaId, int droppedCalls, int blockedCalls, int totalCalls) {
+    public Statistics(int replicaId, int droppedCalls, int blockedCalls, int totalCalls, int handovers, int endCalls) {
         this.replicaId = replicaId;
         this.droppedCalls = droppedCalls;
         this.blockedCalls = blockedCalls;
         this.totalCalls = totalCalls;
+        this.handovers = handovers;
+        this.endCalls = endCalls;
     }
 
     public double getDroppedCallsPercentage() {
-        return (double) droppedCalls / totalCalls;
+        return (double) droppedCalls / totalCalls * 100;
     }
 
     public double getBlockedCallsPercentage() {
-        return (double) blockedCalls / totalCalls;
+        return (double) blockedCalls / totalCalls * 100;
     }
 
     public int getBlockedCalls() {
@@ -60,5 +64,21 @@ public class Statistics {
 
     public void setTotalCalls(int totalCalls) {
         this.totalCalls = totalCalls;
+    }
+
+    public int getEndCalls() {
+        return endCalls;
+    }
+
+    public void setEndCalls(int endCalls) {
+        this.endCalls = endCalls;
+    }
+
+    public int getHandovers() {
+        return handovers;
+    }
+
+    public void setHandovers(int handovers) {
+        this.handovers = handovers;
     }
 }
